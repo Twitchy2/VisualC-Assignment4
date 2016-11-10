@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace VisualC_Assignment4
 {
-    public partial class SplashForm : Form
+    public partial class StartForm : Form
     {
-        public SplashForm()
+        public StartForm()
         {
             InitializeComponent();
         }
