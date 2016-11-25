@@ -16,5 +16,13 @@ namespace VisualC_Assignment4
         {
             InitializeComponent();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            StartForm start = new StartForm();
+            start.Show();
+            this.Hide();
+            timer1.Enabled = false;
+        }
     }
 }

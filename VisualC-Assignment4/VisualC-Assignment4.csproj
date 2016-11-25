@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Sharp.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -46,11 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Assignment4DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Assignment4DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="SplashForm.Designer.cs">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </Compile>
     <Compile Include="OrderForm.cs">
       <SubType>Form</SubType>
@@ -78,8 +86,8 @@
     <Compile Include="StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="SplashForm.resx">
+      <DependentUpon>SplashForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrderForm.resx">
       <DependentUpon>OrderForm.cs</DependentUpon>
@@ -95,6 +103,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="SelectForm.resx">
       <DependentUpon>SelectForm.cs</DependentUpon>
@@ -102,6 +111,17 @@
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Assignment4DataSet.xsc">
+      <DependentUpon>Assignment4DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Assignment4DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Assignment4DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Assignment4DataSet.xss">
+      <DependentUpon>Assignment4DataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -114,6 +134,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sharp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sharp.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
