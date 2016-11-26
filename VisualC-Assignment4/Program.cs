@@ -8,6 +8,7 @@ namespace VisualC_Assignment4
 {
     static class Program
     {
+        public static ComputerInfo CompInfo = new ComputerInfo();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

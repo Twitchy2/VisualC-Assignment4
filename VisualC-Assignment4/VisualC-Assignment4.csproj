@@ -54,6 +54,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Assignment4DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ComputerInfo.cs" />
     <Compile Include="SplashForm.cs">
       <SubType>Form</SubType>
     </Compile>
