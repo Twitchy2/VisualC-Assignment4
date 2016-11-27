@@ -6,12 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("VisualC-Assignment4")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("TwitchCorp brings you whatever this is. Made my Logan Sikora-Beder, contact Sharp Computers at 1-800-133-7331. Website at LoganSikoraBeder@Heroku.com")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Sharp Computers")]
 [assembly: AssemblyProduct("VisualC-Assignment4")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCopyright("Copyright ©  Logan Sikora Beder | 2016")]
+[assembly: AssemblyTrademark("Logan Sikora-Beder")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 

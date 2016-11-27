@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,16 +47,16 @@
             this.ManuLabel = new System.Windows.Forms.Label();
             this.PlatformLabel = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HDDTextBox = new System.Windows.Forms.TextBox();
+            this.OsTextBox2 = new System.Windows.Forms.TextBox();
+            this.WebcamTextBox = new System.Windows.Forms.TextBox();
+            this.GPUTextBox = new System.Windows.Forms.TextBox();
+            this.MemoryTextBox = new System.Windows.Forms.TextBox();
+            this.BrandTextBox = new System.Windows.Forms.TextBox();
+            this.TypeTextBox = new System.Windows.Forms.TextBox();
+            this.NumberTextBox = new System.Windows.Forms.TextBox();
+            this.SpeedTextBox = new System.Windows.Forms.TextBox();
+            this.LCDTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,12 +74,14 @@
             this.FinalPriceLabel = new System.Windows.Forms.Label();
             this.SalesTaxLabel = new System.Windows.Forms.Label();
             this.PriceLabel = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SharpPictureBox = new System.Windows.Forms.PictureBox();
+            this.BackButton = new System.Windows.Forms.Button();
+            this.FinishButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SystemGroupBox.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.PriceGroup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SharpPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -105,14 +108,16 @@
             // printToolStripMenuItem
             // 
             this.printToolStripMenuItem.Name = "printToolStripMenuItem";
-            this.printToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.printToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.printToolStripMenuItem.Text = "Print";
+            this.printToolStripMenuItem.Click += new System.EventHandler(this.printToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -125,8 +130,9 @@
             // backToolStripMenuItem
             // 
             this.backToolStripMenuItem.Name = "backToolStripMenuItem";
-            this.backToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.backToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.backToolStripMenuItem.Text = "Back";
+            this.backToolStripMenuItem.Click += new System.EventHandler(this.backToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -139,8 +145,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // SystemGroupBox
             // 
@@ -233,16 +240,16 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox9);
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.HDDTextBox);
+            this.groupBox2.Controls.Add(this.OsTextBox2);
+            this.groupBox2.Controls.Add(this.WebcamTextBox);
+            this.groupBox2.Controls.Add(this.GPUTextBox);
+            this.groupBox2.Controls.Add(this.MemoryTextBox);
+            this.groupBox2.Controls.Add(this.BrandTextBox);
+            this.groupBox2.Controls.Add(this.TypeTextBox);
+            this.groupBox2.Controls.Add(this.NumberTextBox);
+            this.groupBox2.Controls.Add(this.SpeedTextBox);
+            this.groupBox2.Controls.Add(this.LCDTextBox);
             this.groupBox2.Controls.Add(this.label10);
             this.groupBox2.Controls.Add(this.label9);
             this.groupBox2.Controls.Add(this.label8);
@@ -259,85 +266,85 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             // 
-            // textBox10
+            // HDDTextBox
             // 
-            this.textBox10.Location = new System.Drawing.Point(101, 204);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(326, 25);
-            this.textBox10.TabIndex = 30;
+            this.HDDTextBox.Location = new System.Drawing.Point(101, 204);
+            this.HDDTextBox.Name = "HDDTextBox";
+            this.HDDTextBox.ReadOnly = true;
+            this.HDDTextBox.Size = new System.Drawing.Size(326, 25);
+            this.HDDTextBox.TabIndex = 30;
             // 
-            // textBox9
+            // OsTextBox2
             // 
-            this.textBox9.Location = new System.Drawing.Point(101, 297);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(326, 25);
-            this.textBox9.TabIndex = 29;
+            this.OsTextBox2.Location = new System.Drawing.Point(101, 297);
+            this.OsTextBox2.Name = "OsTextBox2";
+            this.OsTextBox2.ReadOnly = true;
+            this.OsTextBox2.Size = new System.Drawing.Size(326, 25);
+            this.OsTextBox2.TabIndex = 29;
             // 
-            // textBox8
+            // WebcamTextBox
             // 
-            this.textBox8.Location = new System.Drawing.Point(101, 266);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(326, 25);
-            this.textBox8.TabIndex = 28;
+            this.WebcamTextBox.Location = new System.Drawing.Point(101, 266);
+            this.WebcamTextBox.Name = "WebcamTextBox";
+            this.WebcamTextBox.ReadOnly = true;
+            this.WebcamTextBox.Size = new System.Drawing.Size(326, 25);
+            this.WebcamTextBox.TabIndex = 28;
             // 
-            // textBox7
+            // GPUTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(101, 235);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(326, 25);
-            this.textBox7.TabIndex = 27;
+            this.GPUTextBox.Location = new System.Drawing.Point(101, 235);
+            this.GPUTextBox.Name = "GPUTextBox";
+            this.GPUTextBox.ReadOnly = true;
+            this.GPUTextBox.Size = new System.Drawing.Size(326, 25);
+            this.GPUTextBox.TabIndex = 27;
             // 
-            // textBox6
+            // MemoryTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(101, 49);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(326, 25);
-            this.textBox6.TabIndex = 26;
+            this.MemoryTextBox.Location = new System.Drawing.Point(101, 49);
+            this.MemoryTextBox.Name = "MemoryTextBox";
+            this.MemoryTextBox.ReadOnly = true;
+            this.MemoryTextBox.Size = new System.Drawing.Size(326, 25);
+            this.MemoryTextBox.TabIndex = 26;
             // 
-            // textBox5
+            // BrandTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(101, 80);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(326, 25);
-            this.textBox5.TabIndex = 25;
+            this.BrandTextBox.Location = new System.Drawing.Point(101, 80);
+            this.BrandTextBox.Name = "BrandTextBox";
+            this.BrandTextBox.ReadOnly = true;
+            this.BrandTextBox.Size = new System.Drawing.Size(326, 25);
+            this.BrandTextBox.TabIndex = 25;
             // 
-            // textBox4
+            // TypeTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(101, 111);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(326, 25);
-            this.textBox4.TabIndex = 24;
+            this.TypeTextBox.Location = new System.Drawing.Point(101, 111);
+            this.TypeTextBox.Name = "TypeTextBox";
+            this.TypeTextBox.ReadOnly = true;
+            this.TypeTextBox.Size = new System.Drawing.Size(326, 25);
+            this.TypeTextBox.TabIndex = 24;
             // 
-            // textBox3
+            // NumberTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(101, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(326, 25);
-            this.textBox3.TabIndex = 23;
+            this.NumberTextBox.Location = new System.Drawing.Point(101, 145);
+            this.NumberTextBox.Name = "NumberTextBox";
+            this.NumberTextBox.ReadOnly = true;
+            this.NumberTextBox.Size = new System.Drawing.Size(326, 25);
+            this.NumberTextBox.TabIndex = 23;
             // 
-            // textBox2
+            // SpeedTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 176);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(326, 25);
-            this.textBox2.TabIndex = 22;
+            this.SpeedTextBox.Location = new System.Drawing.Point(101, 176);
+            this.SpeedTextBox.Name = "SpeedTextBox";
+            this.SpeedTextBox.ReadOnly = true;
+            this.SpeedTextBox.Size = new System.Drawing.Size(326, 25);
+            this.SpeedTextBox.TabIndex = 22;
             // 
-            // textBox1
+            // LCDTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(101, 18);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(326, 25);
-            this.textBox1.TabIndex = 21;
+            this.LCDTextBox.Location = new System.Drawing.Point(101, 18);
+            this.LCDTextBox.Name = "LCDTextBox";
+            this.LCDTextBox.ReadOnly = true;
+            this.LCDTextBox.Size = new System.Drawing.Size(326, 25);
+            this.LCDTextBox.TabIndex = 21;
             // 
             // label10
             // 
@@ -447,7 +454,7 @@
             this.PriceGroup.Controls.Add(this.FinalPriceLabel);
             this.PriceGroup.Controls.Add(this.SalesTaxLabel);
             this.PriceGroup.Controls.Add(this.PriceLabel);
-            this.PriceGroup.Location = new System.Drawing.Point(453, 362);
+            this.PriceGroup.Location = new System.Drawing.Point(453, 325);
             this.PriceGroup.Name = "PriceGroup";
             this.PriceGroup.Size = new System.Drawing.Size(338, 181);
             this.PriceGroup.TabIndex = 3;
@@ -505,30 +512,57 @@
             this.PriceLabel.TabIndex = 0;
             this.PriceLabel.Text = "Price:";
             // 
-            // pictureBox1
+            // SharpPictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(499, 72);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 281);
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.SharpPictureBox.Location = new System.Drawing.Point(497, 27);
+            this.SharpPictureBox.Name = "SharpPictureBox";
+            this.SharpPictureBox.Size = new System.Drawing.Size(264, 281);
+            this.SharpPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.SharpPictureBox.TabIndex = 4;
+            this.SharpPictureBox.TabStop = false;
+            // 
+            // BackButton
+            // 
+            this.BackButton.Location = new System.Drawing.Point(453, 512);
+            this.BackButton.Name = "BackButton";
+            this.BackButton.Size = new System.Drawing.Size(81, 31);
+            this.BackButton.TabIndex = 5;
+            this.BackButton.Text = "Back";
+            this.BackButton.UseVisualStyleBackColor = true;
+            this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
+            // 
+            // FinishButton
+            // 
+            this.FinishButton.Location = new System.Drawing.Point(710, 512);
+            this.FinishButton.Name = "FinishButton";
+            this.FinishButton.Size = new System.Drawing.Size(81, 31);
+            this.FinishButton.TabIndex = 6;
+            this.FinishButton.Text = "Finished";
+            this.FinishButton.UseVisualStyleBackColor = true;
+            this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click);
             // 
             // OrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(803, 555);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.FinishButton);
+            this.Controls.Add(this.BackButton);
+            this.Controls.Add(this.SharpPictureBox);
             this.Controls.Add(this.PriceGroup);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.SystemGroupBox);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Modern No. 20", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "OrderForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Finalize Order";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OrderForm_FormClosed);
+            this.Load += new System.EventHandler(this.OrderForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.SystemGroupBox.ResumeLayout(false);
@@ -537,7 +571,7 @@
             this.groupBox2.PerformLayout();
             this.PriceGroup.ResumeLayout(false);
             this.PriceGroup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SharpPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -570,17 +604,17 @@
         private System.Windows.Forms.Label FinalPriceLabel;
         private System.Windows.Forms.Label SalesTaxLabel;
         private System.Windows.Forms.Label PriceLabel;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.PictureBox SharpPictureBox;
+        private System.Windows.Forms.TextBox HDDTextBox;
+        private System.Windows.Forms.TextBox OsTextBox2;
+        private System.Windows.Forms.TextBox WebcamTextBox;
+        private System.Windows.Forms.TextBox GPUTextBox;
+        private System.Windows.Forms.TextBox MemoryTextBox;
+        private System.Windows.Forms.TextBox BrandTextBox;
+        private System.Windows.Forms.TextBox TypeTextBox;
+        private System.Windows.Forms.TextBox NumberTextBox;
+        private System.Windows.Forms.TextBox SpeedTextBox;
+        private System.Windows.Forms.TextBox LCDTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -591,5 +625,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BackButton;
+        private System.Windows.Forms.Button FinishButton;
     }
 }

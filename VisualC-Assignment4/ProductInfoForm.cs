@@ -95,11 +95,19 @@ namespace VisualC_Assignment4
         /// </summary>
         private void SaveProduct()
         {
-            DialogResult result = MessageBox.Show("Are you sure you want to save?", "Save Names", MessageBoxButtons.OKCancel);
-            if (result == DialogResult.OK)
+            //open a file and put it in the product form
+            //create instance of openfiledialog
+            SaveFileDialog Save = new SaveFileDialog();
+            //set properties
+            Save.InitialDirectory = Directory.GetCurrentDirectory();
+            Save.Title = "Save File";
+            Save.FileName = "Products.txt";
+            Save.Filter = "Text Files(*.txt)|*.txt|All Files(*.*)|*.*";
+            //Open the DIalog Box
+            if (Save.ShowDialog() == DialogResult.OK)
             {
                 //Open stream
-                StreamWriter writer = new StreamWriter("ProductInfo.txt", true);
+                StreamWriter writer = new StreamWriter(Save.OpenFile());
                 //write to stream
                 //do you hate us by giving us so much to put on there?
                 writer.WriteLine(ProductIDTextBox.Text +  ", " + ConditionTextBox.Text + ", " + CostTextBox.Text + ", " +
@@ -115,6 +123,39 @@ namespace VisualC_Assignment4
             {
                 NextButton.Focus();
             }
+        }
+        /// <summary>
+        /// we gotta go back
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SelectLabel_Click(object sender, EventArgs e)
+        {
+            //not actually a label
+            //will close this down and open the old one up
+            GoBack();
+        }
+        /// <summary>
+        /// guess what this does
+        /// </summary>
+        private void GoBack()
+        {
+            SelectForm formSelect = new SelectForm();
+            formSelect.Show();
+            this.Hide();
+        }
+
+        private void NextButton_Click(object sender, EventArgs e)
+        {
+            OrderForm order = new OrderForm();
+            order.Show();
+            this.Hide();
+            
+        }
+
+        private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
