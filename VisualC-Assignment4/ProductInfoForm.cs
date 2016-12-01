@@ -32,7 +32,11 @@ namespace VisualC_Assignment4
         {
             Quit();
         }
-
+        /// <summary>
+        /// Reads the file given and prints into the class
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //open a file and put it in the product form
@@ -48,11 +52,54 @@ namespace VisualC_Assignment4
             if (DialogResult != DialogResult.Cancel)
             {
                 StreamReader read = new StreamReader(openFIleDialog.FileName);
-                ProductInfoForm info = new ProductInfoForm();
-                //This block of code will put stuff in place
+                
+                //use readline
+                string CompInfoRead = read.ReadLine();
+                //split from the commoas
+                string[] linestring = CompInfoRead.Split(',');
+                //here come that linegrab
+                Program.CompInfo.ProductID = linestring[0];
+                Program.CompInfo.conidtion = linestring[1];
+                Program.CompInfo.Cost = linestring[2];
+                Program.CompInfo.Platform = linestring[3];
+                Program.CompInfo.OS = linestring[4];
+                Program.CompInfo.Manufactuer = linestring[5];
+                Program.CompInfo.Model = linestring[6];
+                Program.CompInfo.Ram_size = linestring[7];
+                Program.CompInfo.CPU_brand = linestring[8];
+                Program.CompInfo.CPU_type = linestring[9];
+                Program.CompInfo.Screensize = linestring[10];
+                Program.CompInfo.CPU_number = linestring[11];
+                Program.CompInfo.CPU_speed = linestring[12];
+                Program.CompInfo.HDD_Size = linestring[13];
+                Program.CompInfo.GPU_type = linestring[14];
+                Program.CompInfo.webcame = linestring[15];
 
-                info.Show();
-                this.Hide();
+                //re print it all
+                ProductIDTextBox.Text = Program.CompInfo.ProductID;
+                ConditionTextBox.Text = Program.CompInfo.conidtion;
+                CostTextBox.Text = Program.CompInfo.Cost;
+
+                PlatformTextBox.Text = Program.CompInfo.Platform;
+                ManuTextBox.Text = Program.CompInfo.Manufactuer;
+                OSTextBox.Text = Program.CompInfo.OS;
+                ModelTextBox.Text = Program.CompInfo.Model;
+
+                MemoryTextBox.Text = Program.CompInfo.Ram_size;
+                SpeedTextBox.Text = Program.CompInfo.CPU_speed;
+                BrandTextBox.Text = Program.CompInfo.CPU_brand;
+                TypeTextBox.Text = Program.CompInfo.CPU_type;
+
+                LCDTextBox.Text = Program.CompInfo.Screensize;
+                CPUTextBox.Text = Program.CompInfo.CPU_number;
+
+                HDDTextBox.Text = Program.CompInfo.HDD_Size;
+                GPUTextBox.Text = Program.CompInfo.GPU_type;
+                WebCamTextBox.Text = Program.CompInfo.webcame;
+
+
+
+
             }
             else
             {
@@ -110,11 +157,11 @@ namespace VisualC_Assignment4
                 StreamWriter writer = new StreamWriter(Save.OpenFile());
                 //write to stream
                 //do you hate us by giving us so much to put on there?
-                writer.WriteLine(ProductIDTextBox.Text +  ", " + ConditionTextBox.Text + ", " + CostTextBox.Text + ", " +
-                                PlatformTextBox.Text + ", " + OSTextBox.Text + ", " + ManuTextBox.Text + ", " + ModelTextBox.Text + ", " +
-                                MemoryTextBox.Text + ", " + BrandTextBox.Text + ", " + TypeTextBox.Text + ", " +
-                                LCDTextBox.Text + ", " + CPUTextBox.Text + ", " + SpeedTextBox.Text + ", " +
-                                HDDTextBox.Text + ", " + GPUTextBox.Text + ", " + WebCamTextBox. Text);
+                writer.WriteLine(ProductIDTextBox.Text +  "," + ConditionTextBox.Text + "," + CostTextBox.Text + "," +
+                                PlatformTextBox.Text + "," + OSTextBox.Text + "," + ManuTextBox.Text + "," + ModelTextBox.Text + "," +
+                                MemoryTextBox.Text + "," + BrandTextBox.Text + "," + TypeTextBox.Text + "," +
+                                LCDTextBox.Text + "," + CPUTextBox.Text + "," + SpeedTextBox.Text + "," +
+                                HDDTextBox.Text + "," + GPUTextBox.Text + "," + WebCamTextBox.Text);
                 //Close 
                 writer.Close();
             }
@@ -156,6 +203,11 @@ namespace VisualC_Assignment4
         private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void selectAnotherProductToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GoBack();
         }
     }
 }

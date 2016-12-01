@@ -123,9 +123,9 @@ namespace VisualC_Assignment4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap IBUYPOWER {
+        internal static System.Drawing.Bitmap iBUYPOWER {
             get {
-                object obj = ResourceManager.GetObject("IBUYPOWER", resourceCulture);
+                object obj = ResourceManager.GetObject("iBUYPOWER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

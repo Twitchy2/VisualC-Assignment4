@@ -135,6 +135,7 @@
             this.selectAnotherProductToolStripMenuItem.Name = "selectAnotherProductToolStripMenuItem";
             this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.selectAnotherProductToolStripMenuItem.Text = "Select Another Product";
+            this.selectAnotherProductToolStripMenuItem.Click += new System.EventHandler(this.selectAnotherProductToolStripMenuItem_Click);
             // 
             // IDLabel
             // 

@@ -42,39 +42,51 @@ namespace VisualC_Assignment4
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
-            
-            PriceTextBox.Text = Program.CompInfo.Cost;
-            price = Convert.ToDouble(PriceTextBox.Text);
-
-            TaxTextBox.Text = (price * salesTax).ToString();
-
-            FinalPrice = price + Convert.ToDouble(TaxTextBox.Text);
-
-            FinalTextBox.Text = FinalPrice.ToString();
-
-            PlatformTextBox.Text = Program.CompInfo.Platform;
-            ManuTextBox.Text = Program.CompInfo.Manufactuer;
-            OSTextBox.Text = Program.CompInfo.OS;
-            ModelTextBox.Text = Program.CompInfo.Model;
-            NumberTextBox.Text = Program.CompInfo.CPU_number;
-
-            MemoryTextBox.Text = Program.CompInfo.Ram_size;
-            SpeedTextBox.Text = Program.CompInfo.CPU_speed;
-            BrandTextBox.Text = Program.CompInfo.CPU_brand;
-            TypeTextBox.Text = Program.CompInfo.CPU_type;
-
-            LCDTextBox.Text = Program.CompInfo.Screensize;
-            SpeedTextBox.Text = Program.CompInfo.CPU_number;
-
-            HDDTextBox.Text = Program.CompInfo.HDD_Size;
-            GPUTextBox.Text = Program.CompInfo.GPU_type;
-            WebcamTextBox.Text = Program.CompInfo.webcame;
-            OsTextBox2.Text = Program.CompInfo.OS;
             //now for the piture box
             //Finds the name of hte string and compares it to hte name of the image, sets if same
-            String imageString = Regex.Replace(ManuTextBox.Text, @"\+", "");
+            try
+            {
+                Program.CompInfo.Manufactuer = Program.CompInfo.Manufactuer.Replace(" ", String.Empty);
 
-            SharpPictureBox.Image = (Image)Resources.ResourceManager.GetObject(imageString);
+
+                String imageString = Regex.Replace(Program.CompInfo.Manufactuer, @"\+", "");
+
+                SharpPictureBox.Image = (Image)Resources.ResourceManager.GetObject(imageString);
+
+                PriceTextBox.Text = Program.CompInfo.Cost;
+                price = Convert.ToDouble(PriceTextBox.Text);
+
+                TaxTextBox.Text = (price * salesTax).ToString();
+
+                FinalPrice = price + Convert.ToDouble(TaxTextBox.Text);
+
+                FinalTextBox.Text = FinalPrice.ToString();
+
+                PlatformTextBox.Text = Program.CompInfo.Platform;
+                ManuTextBox.Text = Program.CompInfo.Manufactuer;
+                OSTextBox.Text = Program.CompInfo.OS;
+                ModelTextBox.Text = Program.CompInfo.Model;
+                NumberTextBox.Text = Program.CompInfo.CPU_number;
+
+                MemoryTextBox.Text = Program.CompInfo.Ram_size;
+                SpeedTextBox.Text = Program.CompInfo.CPU_speed;
+                BrandTextBox.Text = Program.CompInfo.CPU_brand;
+                TypeTextBox.Text = Program.CompInfo.CPU_type;
+
+                LCDTextBox.Text = Program.CompInfo.Screensize;
+                SpeedTextBox.Text = Program.CompInfo.CPU_number;
+
+                HDDTextBox.Text = Program.CompInfo.HDD_Size;
+                GPUTextBox.Text = Program.CompInfo.GPU_type;
+                WebcamTextBox.Text = Program.CompInfo.webcame;
+                OsTextBox2.Text = Program.CompInfo.OS;
+            }
+            catch (ArgumentException)
+            {
+                MessageBox.Show("wew lad you got an error! THat isnt good at all!");
+            
+            }
+
 
         }
 
@@ -100,7 +112,7 @@ namespace VisualC_Assignment4
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Thank you for your order,\n your product should arrive within 7-10 buisness Days.\n We hope you order again!", "Order Complete", MessageBoxButtons.OK);
+            DialogResult result = MessageBox.Show("Thank you for your order.\n Your product should arrive within 7-10 buisness Days.\n We hope you order again!", "Order Complete", MessageBoxButtons.OK);
             if (result == DialogResult.OK)
             {
                 Application.Exit();

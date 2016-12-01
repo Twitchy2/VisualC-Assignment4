@@ -113,11 +113,13 @@
             this.webcamDataGridViewTextBoxColumn});
             this.DatabaseDataGrid.DataSource = this.productsBindingSource;
             this.DatabaseDataGrid.Location = new System.Drawing.Point(13, 37);
+            this.DatabaseDataGrid.MultiSelect = false;
             this.DatabaseDataGrid.Name = "DatabaseDataGrid";
             this.DatabaseDataGrid.ReadOnly = true;
             this.DatabaseDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DatabaseDataGrid.Size = new System.Drawing.Size(815, 366);
             this.DatabaseDataGrid.TabIndex = 0;
+            this.DatabaseDataGrid.TabStop = false;
             this.DatabaseDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DatabaseDataGrid_CellContentClick);
             // 
             // productIDDataGridViewTextBoxColumn
